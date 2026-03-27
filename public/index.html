@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Tạo Link Shopee</title>
+
   <style>
     body {
       font-family: Arial;
@@ -10,6 +11,7 @@
       display: flex;
       justify-content: center;
       padding: 40px;
+      color: #333;
     }
 
     .container {
@@ -34,6 +36,7 @@
       border-radius: 8px;
       border: none;
       margin-top: 10px;
+      background: #f1f1f1;
     }
 
     button {
@@ -48,36 +51,13 @@
       cursor: pointer;
     }
 
-    .voucher {
-      display: flex;
-      margin-top: 15px;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .voucher .left {
+    .submit-btn {
       background: #ff4d4f;
-      color: #fff;
-      width: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
+      color: white;
     }
 
-    .voucher .right {
-      padding: 10px;
-    }
-
-    .fb-btn {
-      margin-top: 10px;
-      width: 100%;
-      padding: 10px;
-      background: #ff4d4f;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
+    h3 {
+      margin-top: 0;
     }
   </style>
 </head>
@@ -86,30 +66,26 @@
 
 <div class="container">
 
-  <!-- BOX TẠO LINK -->
+  <!-- TẠO LINK -->
   <div class="card top">
     <h2>🔗 Tạo Link Shopee</h2>
     <p>Nhập link sản phẩm để nhận hoàn tiền</p>
 
     <input id="linkInput" placeholder="Dán link Shopee vào đây...">
-
     <button onclick="createLink()">➕ Tạo Link</button>
   </div>
 
-  <!-- BOX HƯỚNG DẪN -->
+  <!-- FORM HOÀN TIỀN -->
   <div class="card">
-    <h3>ℹ️ Cách dùng</h3>
-    <p>Copy link và dán vào Facebook hoặc TikTok để nhận hoàn tiền.</p>
+    <h3>💰 Nhận hoàn tiền</h3>
+    <p>Điền thông tin sau khi mua để được hoàn tiền</p>
 
-    <div class="voucher">
-      <div class="left">f</div>
-      <div class="right">
-        <h4>Giảm 25% - tối đa 250k</h4>
-        <p>Đơn tối thiểu 150k</p>
-      </div>
-    </div>
+    <input id="name" placeholder="Tên của bạn">
+    <input id="order" placeholder="Mã đơn hàng Shopee">
+    <input id="bank" placeholder="Số tài khoản / Momo">
+    <input id="product" placeholder="Link sản phẩm đã mua">
 
-    <button class="fb-btn">📘 Xem bài đăng Facebook</button>
+    <button class="submit-btn" onclick="submitForm()">Gửi yêu cầu</button>
   </div>
 
 </div>
@@ -123,8 +99,27 @@ function createLink() {
     return;
   }
 
-  // 👉 sửa link aff của bạn ở đây
   window.location.href = "https://s.shopee.vn/AUpb4ZviyZ";
+}
+
+function submitForm() {
+  let name = document.getElementById("name").value;
+  let order = document.getElementById("order").value;
+  let bank = document.getElementById("bank").value;
+  let product = document.getElementById("product").value;
+
+  if (!name || !order || !bank || !product) {
+    alert("Điền đầy đủ thông tin nha!");
+    return;
+  }
+
+  alert("Đã gửi! Mình sẽ kiểm tra và hoàn tiền cho bạn.");
+
+  // reset form
+  document.getElementById("name").value = "";
+  document.getElementById("order").value = "";
+  document.getElementById("bank").value = "";
+  document.getElementById("product").value = "";
 }
 </script>
 
