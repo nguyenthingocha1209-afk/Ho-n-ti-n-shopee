@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tạo Link Shopee</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #2c2c2c, #111);
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .container {
+      width: 400px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .top {
+      background: linear-gradient(135deg, #ff7a45, #ff4d4f);
+      color: #fff;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #fff;
+      color: #ff4d4f;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .voucher {
+      display: flex;
+      margin-top: 15px;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .voucher .left {
+      background: #ff4d4f;
+      color: #fff;
+      width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .voucher .right {
+      padding: 10px;
+    }
+
+    .fb-btn {
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px;
+      background: #ff4d4f;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- BOX TẠO LINK -->
+  <div class="card top">
+    <h2>🔗 Tạo Link Shopee</h2>
+    <p>Nhập link sản phẩm để nhận hoàn tiền</p>
+
+    <input id="linkInput" placeholder="Dán link Shopee vào đây...">
+
+    <button onclick="createLink()">➕ Tạo Link</button>
+  </div>
+
+  <!-- BOX HƯỚNG DẪN -->
+  <div class="card">
+    <h3>ℹ️ Cách dùng</h3>
+    <p>Copy link và dán vào Facebook hoặc TikTok để nhận hoàn tiền.</p>
+
+    <div class="voucher">
+      <div class="left">f</div>
+      <div class="right">
+        <h4>Giảm 25% - tối đa 250k</h4>
+        <p>Đơn tối thiểu 150k</p>
+      </div>
+    </div>
+
+    <button class="fb-btn">📘 Xem bài đăng Facebook</button>
+  </div>
+
+</div>
+
+<script>
+function createLink() {
+  let link = document.getElementById("linkInput").value;
+
+  if (!link) {
+    alert("Nhập link đi bạn!");
+    return;
+  }
+
+  // 👉 sửa link aff của bạn ở đây
+  window.location.href = "https://s.shopee.vn/AUpb4ZviyZ";
+}
+</script>
+
+</body>
+</html>
